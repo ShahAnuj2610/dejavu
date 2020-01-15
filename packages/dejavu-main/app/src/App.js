@@ -7,7 +7,7 @@ import {
 	Flex,
 	utils,
 	constants,
-	store,
+	store as browserStore,
 	colors,
 } from '@appbaseio/dejavu-browser';
 
@@ -16,6 +16,8 @@ import NoMatch from './components/NoMatch';
 import OldDejavuBanner from './components/OldDejavuBanner';
 
 import logo from './images/dejavu-logo.svg';
+import configureStore from './store';
+import NavigationWrapper from './components/NavigationWrapper';
 
 const SearchPreview = lazy(() => import('./components/SearchPreview'));
 const DataBrowser = lazy(() => import('@appbaseio/dejavu-browser'));
@@ -25,6 +27,8 @@ const { getUrlParams, getLocalStorageItem, setLocalStorageData } = utils;
 const { LOCAL_CONNECTIONS } = constants;
 
 const { Content, Sider } = Layout;
+
+const store = configureStore();
 
 function withSuspense(ChildComponent, props) {
 	return (
@@ -134,11 +138,11 @@ class App extends Component {
 									width="100%"
 									css={{ padding: 25 }}
 								/>
-								<Navigation />
+								<NavigationWrapper />
 							</Sider>
 						)}
 						<Layout css={{ overflowX: 'hidden !important' }}>
-							<OldDejavuBanner />
+							{/*<OldDejavuBanner />*/}
 							<Content
 								css={{
 									margin: isShowingSideBar ? '15px 25px' : 0,

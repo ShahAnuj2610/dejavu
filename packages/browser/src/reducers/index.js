@@ -40,7 +40,6 @@ const appReducer = combineReducers({
 	selectAll,
 	stats,
 	analyzers,
-	...batteriesReducers,
 });
 
 const initialState = appReducer({}, {});

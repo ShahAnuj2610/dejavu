@@ -103,8 +103,8 @@ const Navigation = ({ indexes, isConnected, history }: Props) => {
 };
 
 const mapStateToProps = state => ({
-	indexes: getIndexes(state),
-	isConnected: getIsConnected(state),
+	// indexes: getIndexes(state),
+	// isConnected: getIsConnected(state),
 });
 
 export default connect(mapStateToProps)(withRouter(Navigation));

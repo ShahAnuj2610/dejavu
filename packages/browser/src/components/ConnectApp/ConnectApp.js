@@ -35,6 +35,7 @@ import { getMode } from '../../reducers/mode';
 import { LOCAL_CONNECTIONS, MODES } from '../../constants';
 
 import Flex from '../Flex';
+import {getIndexes} from "../../reducers/mappings";
 
 type Props = {
 	appname?: string,
@@ -441,11 +442,13 @@ class ConnectApp extends Component<Props, State> {
 			isShowingHeadersModal,
 			customHeaders,
 		} = this.state;
-		const { isLoading, isConnected } = this.props;
+		const { isLoading, isConnected, indexes, children } = this.props;
 		const showHeaders =
 			this.props.showHeaders !== undefined
 				? this.props.showHeaders
 				: true;
+
+		if (children) return children({ appname, url, connected: isConnected, indexes });
 
 		return (
 			<div>
@@ -769,6 +772,7 @@ const mapStateToProps = (state, props) => {
 		isLoading: getIsLoading(state),
 		mode: getMode(state),
 		headers: getHeaders(state),
+		indexes: getIndexes(state),
 	};
 };
 

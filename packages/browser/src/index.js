@@ -26,6 +26,12 @@ import colors from './components/theme/colors';
 // shared store
 const store = configureStore();
 
+const ConnectAppWithStore = props => (
+	<Provider store={store}>
+		<ConnectApp {...props} />
+	</Provider>
+);
+
 const DataBrowserWrapper = props => (
 	<Provider store={store}>
 		<BrowserRouter>
@@ -48,6 +54,7 @@ export {
 	store,
 	constants,
 	colors,
+	ConnectAppWithStore,
 };
 
 // main data browser module
