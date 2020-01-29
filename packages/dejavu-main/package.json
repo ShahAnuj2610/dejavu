@@ -54,20 +54,7 @@
 		"url-parser-lite": "^0.1.0",
 		"urlsafe-base64": "https://github.com/farhan687/urlsafe-base64.git"
 	},
-	"devDependencies": {
-		"clean-webpack-plugin": "^1.0.0",
-		"copy-webpack-plugin": "^4.0.0",
-		"favicons-webpack-plugin": "^0.0.9",
-		"html-webpack-harddisk-plugin": "^1.0.1",
-		"html-webpack-plugin": "^3.2.0",
-		"react": "^16.12.0",
-		"react-dom": "^16.12.0",
-		"webpack": "^4.19.0",
-		"webpack-bundle-analyzer": "^3.0.2",
-		"webpack-cli": "^3.1.0",
-		"webpack-dev-server": "^3.1.8",
-		"write-file-webpack-plugin": "^4.5.0"
-	},
+	"devDependencies": {},
 	"files": [
 		"lib/"
 	],

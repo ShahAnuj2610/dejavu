@@ -52,10 +52,11 @@
 		"lib/"
 	],
 	"scripts": {
-		"watch": "yarn build:commonjs -w && yarn build:es -w",
-		"build": "yarn build:commonjs && yarn build:es",
+		"watch": "webpack-dev-server",
+		"build": "yarn build:es",
 		"build:commonjs": "babel --ignore __tests__ src --out-dir lib --copy-files src/images",
-		"build:es": "babel src/index.js --out-file lib/index.es.js",
+		"build:babel": "babel src/index.js --out-file babel/index.es.js",
+		"build:es": "webpack",
 		"format": "prettier --write --use-tabs 'src/!(batteries*)**/**/*.js'",
 		"precommit": "lint-staged"
 	},
